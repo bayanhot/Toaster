@@ -66,7 +66,7 @@ public class Toaster {
      * @param message 消息
      */
     private static void showToast(String message) {
-        cancel();
+        cancelToast();
         toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
         toast.show();
     }
@@ -76,7 +76,7 @@ public class Toaster {
      * @param messageColor 字体颜色
      */
     private static void showToast(String message, int messageColor) {
-        cancel();
+        cancelToast();
         setColor(message, messageColor);
         toast.show();
     }
@@ -87,7 +87,7 @@ public class Toaster {
      * @param shapeResource 背景样式
      */
     private static void showToast(String massage, int messageColor, int shapeResource) {
-        cancel();
+        cancelToast();
         setColor(massage, messageColor);
         setBackGround(shapeResource);
         toast.show();
@@ -146,7 +146,7 @@ public class Toaster {
      * @param gravity 位置
      */
     private static void showToastAt(String message, int gravity) {
-        cancel();
+        cancelToast();
         toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
         toast.setGravity(gravity, 0, 200);
         toast.show();
@@ -158,7 +158,7 @@ public class Toaster {
      * @param gravity      位置
      */
     private static void showToastAt(String message, int messageColor, int gravity) {
-        cancel();
+        cancelToast();
         setColor(message, messageColor);
         toast.setGravity(gravity, 0, 200);
         toast.show();
@@ -171,7 +171,7 @@ public class Toaster {
      * @param gravity       位置
      */
     private static void showToastAt(String message, int messageColor, int shapeResource, int gravity) {
-        cancel();
+        cancelToast();
         setColor(message, messageColor);
         setBackGround(shapeResource);
         toast.setGravity(gravity, 0, 200);
@@ -187,7 +187,7 @@ public class Toaster {
      * @param y             基于位置的y轴偏移
      */
     private static void showToastAt(String message, int messageColor, int shapeResource, int gravity, int x, int y) {
-        cancel();
+        cancelToast();
         setColor(message, messageColor);
         setBackGround(shapeResource);
         toast.setGravity(gravity, x, y);
@@ -220,10 +220,17 @@ public class Toaster {
     /**
      * 取消Toast显示
      */
-    public static void cancel() {
+    private static void cancelToast() {
         if (toast != null) {
             toast.cancel();
             toast = null;
         }
+    }
+
+    /**
+     * 外部调用取消Toast
+     */
+    public static void cancel() {
+        cancelToast();
     }
 }
