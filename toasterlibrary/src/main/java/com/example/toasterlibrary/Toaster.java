@@ -220,7 +220,7 @@ public class Toaster {
     /**
      * 取消Toast显示
      */
-    private static void cancel() {
+    public static void cancel() {
         if (toast != null) {
             toast.cancel();
             toast = null;
