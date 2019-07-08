@@ -1,6 +1,6 @@
 # Toaster
 <br>a convenient toast util
-<br>这是一个简单方便的Toast工具类
+<br>一个简单方便的Toast工具类
 ====
 <br>实现了基本Toast显示，通过改变字体颜色，背景样式，显示位置，以及基于他们的组合，实现灵活的Toast显示
 <br>由于日常很少用到长时间的Toast显示，所以本库均使用默认短时间显示2s
