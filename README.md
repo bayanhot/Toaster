@@ -24,7 +24,7 @@ allprojects {
 }
 ```
 
-<br>在app的build.gradle下添加依赖
+<br>在app的build.gradle下添加依赖implementation 'com.github.bayanhot:Toaster:1.0.1'
 ```Java
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -39,7 +39,7 @@ dependencies {
 
 <br>2，初始化
 -------
-<br>在Application的onCreate()中进行初始化
+<br>在Application的onCreate()中进行初始化Toaster.init(this);
 ```
 public class MyApplication extends Application {
 
